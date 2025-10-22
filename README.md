@@ -1,49 +1,47 @@
 # Conversor de Texto para Fala (TTS) 🎤
 
-Este projeto é um script simples em Python que converte texto em fala usando a biblioteca `gTTS` (Google Text-to-Speech) e processa o áudio gerado com a biblioteca `pydub`. 🐍🔊
+Este projeto é uma aplicação web em Python que converte texto em fala usando a biblioteca `gTTS` (Google Text-to-Speech). A interface é construída com Streamlit para uma experiência interativa. 🐍🔊🌐
 
 ## Descrição 📝
 
-O script `app.py` converte um texto em português brasileiro em um arquivo de áudio MP3. Ele utiliza o `gTTS` para gerar o áudio inicial e o `pydub` para exportar o arquivo final em formato MP3. 🎵
+A aplicação `app.py` permite ao usuário inserir texto em português brasileiro e gerar um arquivo de áudio MP3. Ela utiliza o `gTTS` para gerar o áudio diretamente em formato MP3. A interface web permite reprodução e download direto do áudio. 🎵
 
 ## Requisitos 📋
 
 - Python 3.x 🐍
 - Bibliotecas:
   - `gtts` 🌐
-  - `pydub` 🎧
-  - `ffmpeg` (necessário para o pydub processar áudios MP3) 🔧
+  - `pydub` (opcional, para futuras expansões) 🔧
+  - `streamlit` 🌟
 
 ## Instalação 🔧
 
 1. Instale as dependências Python:
    ```
-   pip install gtts pydub
+   pip install gtts pydub streamlit
    ```
-
-2. Instale o `ffmpeg` (se não estiver instalado):
-   - No Windows: Baixe e instale do site oficial do FFmpeg. 💻
-   - No Linux: `sudo apt install ffmpeg` 🐧
-   - No macOS: `brew install ffmpeg` 🍎
 
 ## Uso ▶️
 
-Execute o script Python:
+Execute a aplicação Streamlit:
 ```
-python app.py
+streamlit run app.py
 ```
 
-O script irá gerar dois arquivos de áudio:
-- `audio_raw.mp3`: Áudio bruto gerado pelo gTTS. 🎤
-- `audio_final.mp3`: Áudio processado e exportado pelo pydub. 🎵
+A aplicação será aberta no navegador. Insira o texto desejado na área de texto e clique em "Gerar Áudio". O áudio será gerado, reproduzido na página e disponível para download. 🎤
 
-## Saída 📤
+## Funcionalidades 🌟
 
-Após a execução, você verá a mensagem "Audio gerado com sucesso" no console. Os arquivos de áudio estarão disponíveis no diretório do projeto. ✅
+- **Inserção de Texto:** Área de texto para inserir o conteúdo a ser convertido.
+- **Geração de Áudio:** Botão para processar o texto e gerar o MP3.
+- **Reprodução:** Player de áudio integrado para ouvir o resultado.
+- **Download:** Opção para baixar o arquivo de áudio gerado.
+- **Tratamento de Erros:** Exibe mensagens de erro em caso de falha na geração do áudio.
+- **Nomes de Arquivo Únicos:** Cada áudio gerado tem um nome único com timestamp para evitar sobreposições.
 
 ## Exemplo de Texto 💬
 
-O texto usado no exemplo é: "Olá, este é um exemplo de conversão de texto em fala usando gTTS e pydub. Vamos converter este texto em um arquivo de áudio MP3 e depois reproduzi-lo." 🌟
+O texto padrão é: "Olá, este é um exemplo de conversão de texto em fala usando gTTS. Vamos converter este texto em um arquivo de áudio MP3 e depois reproduzi-lo." 🌟
 
 ## Licença 📄
 
